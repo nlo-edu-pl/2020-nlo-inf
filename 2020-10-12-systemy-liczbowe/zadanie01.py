@@ -1,21 +1,21 @@
+cyfry = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
 podstawa = int(input("Podaj podstawę: "))
-
 liczba = input(f"Podaj liczbę o podstawie {podstawa}: ")
+podstawa2 = int(input("Podaj podstawę na którą chcesz przeliczyć: "))
 
-wynik = 0
-
+n = 0
 for i in range( len(liczba) ):
-  wynik *= podstawa
-  # wynik = wynik * podstawa
-  
-  #cyfra = int( liczba[i] )
+  n *= podstawa
+  cyfra = cyfry.find( liczba[i] )
+  n += cyfra # zapis skrócony
 
-  cyfra = "0123456789abcdef".find( liczba[i] )
+print(f"Liczba {liczba} o podstawie {podstawa}: na wartość: {n} (dziesiętną)")
 
-  # wynik = wynik + cyfra 
-  wynik += cyfra # zapis skrócony
+wynik = ""
+while n > 0:
+  cyfra = cyfry[ n % podstawa2 ]
+  wynik = cyfra + wynik
+  n = n // podstawa2
 
-  #print( f"{i}: {wynik}  {cyfra}" )
-
-print(f"Liczba {liczba} o podstawie {podstawa}: na wartość: {wynik}")
-
+print(f"Liczba {liczba} o podstawie {podstawa}: na wartość: {wynik} (w podstawie {podstawa2})")
