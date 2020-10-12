@@ -1,6 +1,7 @@
-liczba = "2bf541"
+podstawa = int(input("Podaj podstawę: "))
 
-podstawa = 16
+liczba = input(f"Podaj liczbę o podstawie {podstawa}: ")
+
 wynik = 0
 
 for i in range( len(liczba) ):
@@ -14,6 +15,7 @@ for i in range( len(liczba) ):
   # wynik = wynik + cyfra 
   wynik += cyfra # zapis skrócony
 
-  print( f"{i}: {wynik}  {cyfra}" )
+  #print( f"{i}: {wynik}  {cyfra}" )
 
-print(wynik)
+print(f"Liczba {liczba} o podstawie {podstawa}: na wartość: {wynik}")
+
