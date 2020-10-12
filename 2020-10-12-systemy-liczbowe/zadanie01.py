@@ -1,8 +1,12 @@
 cyfry = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 podstawa = int(input("Podaj podstawę: "))
+assert podstawa >= 2 and podstawa <= len( cyfry ), "Błędna podstawa {podstawa}"
+
 liczba = input(f"Podaj liczbę o podstawie {podstawa}: ")
+
 podstawa2 = int(input("Podaj podstawę na którą chcesz przeliczyć: "))
+assert podstawa2 >= 2 and podstawa2 <= len( cyfry ), "Błędna podstawa {podstawa2}"
 
 n = 0
 for i in range( len(liczba) ):

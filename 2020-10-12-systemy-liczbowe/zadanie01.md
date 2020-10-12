@@ -7,3 +7,4 @@ Przykład działania:
     Podaj nową podstawę: 14
     Przeliczam na system 14: [wynik]
 
+Program ma się przerwać, jeśli którakolwiek cyfra jest niepoprawna w danej podstawie.
