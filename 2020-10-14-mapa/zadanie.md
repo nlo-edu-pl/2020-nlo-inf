@@ -17,6 +17,7 @@ Przykład:
 Dla każdego z mieszkańców policzyć ile sklepów jest we wskazanym promieniu, np. 200.
 
 Przykład:
+
     Mieszkaniec 0: 3
     Mieszkaniec 1: 7
     Mieszkaniec 2: 4
