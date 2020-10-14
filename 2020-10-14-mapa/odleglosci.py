@@ -22,7 +22,12 @@ with open("sklepy.txt","r") as f:
 
 for nm, m in enumerate( mieszkancy ):
     print(f"Mieszkaniec numer {nm} {m}:")
+    smin = None
+    odlmin = None
     for ns, s in enumerate( sklepy ):
         odl = odleglosc( m[0], m[1], s[0], s[1] )
-        print(f"   Sklep numer {ns}: {s}: {odl}")
-        
+        if smin == None or odl < odlmin:
+            smin = ns
+            odlmin = odl
+        #print(f"   Sklep numer {ns}: {s}: {odl}")
+    print(f"Najbliższy sklep ma numer {smin} i jest w odległości {odlmin}")  
