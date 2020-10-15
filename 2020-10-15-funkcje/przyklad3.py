@@ -19,7 +19,7 @@ for tempC in temperaturyC:
 
 # dopisać brakujący kod przeliczający F na C i K
 
-temperaturyF = [ -2, 0, 2, 8, 10, 20, 25, 30, 40, 50, 60, 70 ]
+temperaturyF = [ -2, 0, 2, 8, 10, 20, 25, 30, 40, 50, 60, 70, 80, 90 ]
 
 for tempF in temperaturyF:
     tempC = przelicz_F_na_C( tempF )
