@@ -1,10 +1,12 @@
+def przelicz_C_na_K( tC ):
+    return tC + 273.15
+
 def przelicz_C_na_F( tC ):
-    tempF = 1.8 * tC + 32
-    return tempF
+    return 1.8 * tC + 32
 
 temperaturyC = [ -10, -5, 0, 5, 10, 15, 20, 25 ]
 
 for tempC in temperaturyC:
     tempF = przelicz_C_na_F( tempC )
-    tempK = 222
-    print(f" {tempC}°C = {tempF}°F = {tempK}°K ")
+    tempK = przelicz_C_na_K( tempC )
+    print(f"{tempC:8.1f}°C = {tempF:8.1f}°F = {tempK:8.2f}°K ")
