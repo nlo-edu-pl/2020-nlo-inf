@@ -5,6 +5,7 @@ def odleglosc( x1, y1, x2, y2 ):
 
 mieszkancy = []
 sklepy = []
+licznik_mieszkancow = []
 
 with open("mieszkancy.txt","r") as f:
     for linia in f:
@@ -19,6 +20,7 @@ with open("sklepy.txt","r") as f:
         x = int(x)
         y = int(y)
         sklepy.append( [x,y] )
+        licznik_mieszkancow.append( 0 )
 
 for nm, m in enumerate( mieszkancy ):
     print(f"Mieszkaniec numer {nm} {m}:")
@@ -31,3 +33,7 @@ for nm, m in enumerate( mieszkancy ):
             odlmin = odl
         #print(f"   Sklep numer {ns}: {s}: {odl}")
     print(f"Najbliższy sklep ma numer {smin} i jest w odległości {odlmin}")  
+    licznik_mieszkancow[ smin ] += 1
+
+for ns, ile in enumerate( licznik_mieszkancow ):
+    print( f"Sklep #{ns} : {ile}" )
