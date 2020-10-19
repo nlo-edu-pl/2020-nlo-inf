@@ -1,5 +1,5 @@
-width = 320
-height = 200
+width = 80
+height = 50
 
 with open("polska.ppm","w") as f:
     f.write("P3\n")
