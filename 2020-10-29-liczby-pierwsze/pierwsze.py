@@ -7,6 +7,6 @@ def czy_pierwsza( n ):
             break
     return True
 
-for i in range( 2, 100000 ):
+for i in range( 2, 1000000 ):
     if czy_pierwsza( i ):
         print(i)
