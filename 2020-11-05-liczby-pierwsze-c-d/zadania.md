@@ -50,3 +50,14 @@ Liczby bliźniacze to:
 191 i 193
 197 i 199
 ```
+## Zadanie - [liczby doskonałe](https://pl.wikipedia.org/wiki/Liczba_doskona%C5%82a)
+
+1. Napisać program sprawdzający, czy dana liczba jest doskonała.
+
+2. Napisać program znajdujący liczby doskonałe.
+
+## Zadanie - [liczby półpierwsze](https://pl.wikipedia.org/wiki/Liczba_p%C3%B3%C5%82pierwsza)
+
+1. Napisać program sprawdzający, czy dana liczba jest półpierwsza.
+
+2. Napisać program znajdujący trójki kolejnych liczb półpierwszych.
