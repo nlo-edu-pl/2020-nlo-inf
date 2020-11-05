@@ -63,3 +63,9 @@ Liczby bliźniacze to:
 1. Napisać program sprawdzający, czy dana liczba jest półpierwsza.
 
 2. Napisać program znajdujący trójki kolejnych liczb półpierwszych.
+
+## Zadanie - [liczby zaprzyjaźnione](https://pl.wikipedia.org/wiki/Liczby_zaprzyja%C5%BAnione)
+
+1. Napisać program sprawdzający, czy dana para liczb jest zaprzyjaźniona.
+
+2. Napisać program znajdujący pary liczb zaprzyjaźnionych.
