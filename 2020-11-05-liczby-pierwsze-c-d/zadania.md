@@ -12,6 +12,7 @@ Liczby pierwsze w przedziale 10..20 to:
 17
 19
 (razem 4 liczby)
+```
 
 ## Zadanie
 
