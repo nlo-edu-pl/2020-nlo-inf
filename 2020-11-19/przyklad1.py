@@ -9,20 +9,22 @@ uczniowie = [
   { "imie" : "Marek", "nazwisko" : "D.", "oceny" : "5 5 2 5 4 3 4 5 3 4 3 4" },
   { "imie" : "Marek", "nazwisko" : "D.", "oceny" : "5 5 4 3 4 4 4 3 3 3 5 3" },
   { "imie" : "Marek", "nazwisko" : "X.", "oceny" : "2 2 3 2 2 2 3 3 4 3 3 2" },
-  { "imie" : "Marek", "nazwisko" : "B.", "oceny" : "6 4 5 4 5 5 4 6 4 3 5 4" },
+  { "imie" : "Marek", "nazwisko" : "B.", "oceny" : "6 4 5 6 5 5 6 6 6 6 5 6" },
   { "imie" : "Marek", "nazwisko" : "V.", "oceny" : "4 5 3 3 2 4 4 5 3 6 2 3" }
 ]
 
 def wyswietl_ucznia( uczen ):
     print(f"{uczen['imie']} {uczen['nazwisko']} oceny: {uczen['oceny']}")
 
-# napisac kod funkcji liczącej średnią ocen ucznia:
-
 def policz_srednia( uczen ):
-    pass
-
-
+    oceny_t = uczen['oceny'].split()
+    oceny = []
+    for o in oceny_t:
+        oceny.append( int(o) )
+    return sum(oceny)/len(oceny)
 
 for u in uczniowie:
-    wyswietl_ucznia( u )
-
+    srednia = policz_srednia( u )
+    print(f"{u['imie']} {u['nazwisko']} srednia: {srednia}")
+    if srednia > 4.7:
+        print("czerwony pasek")
