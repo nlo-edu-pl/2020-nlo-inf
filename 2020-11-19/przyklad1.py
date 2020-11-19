@@ -23,8 +23,13 @@ def policz_srednia( uczen ):
         oceny.append( int(o) )
     return sum(oceny)/len(oceny)
 
+# przerobic funkcje wyswietl ucznia, tak aby ponizszy kod dzial tak samo jak poprzedni:
+
 for u in uczniowie:
-    srednia = policz_srednia( u )
-    print(f"{u['imie']} {u['nazwisko']} srednia: {srednia}")
-    if srednia > 4.7:
-        print("czerwony pasek")
+    wyswietl_ucznia( u )
+
+#for u in uczniowie:
+#    srednia = policz_srednia( u )
+#    print(f"{u['imie']} {u['nazwisko']} srednia: {srednia}")
+#    if srednia > 4.7:
+#        print("czerwony pasek")
