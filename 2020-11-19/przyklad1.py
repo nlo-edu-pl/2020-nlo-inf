@@ -23,8 +23,14 @@ class Uczen:
 
 u1 = Uczen("Marcin")
 u2 = Uczen("Karol")
+#u3 = Uczen( "Ania", "Xyz", [3,4,5,6,6,6,5,6,5] )
 u1.powitanie()
 u2.powitanie()
+
+# dopisac do konstruktora obsluge nazwiska i listy ocen
+# np.
+# u3 = Uczen( "Ania", "Xyz", [3,4,5,6,6,6,5,6,5] )
+
 
 def wyswietl_ucznia( uczen ):
     srednia = policz_srednia( uczen )
