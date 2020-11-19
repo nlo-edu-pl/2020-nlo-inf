@@ -13,7 +13,18 @@ uczniowie = [
   { "imie" : "Marek", "nazwisko" : "V.", "oceny" : "4 5 3 3 2 4 4 5 3 6 2 3" }
 ]
 
+class Uczen:
+    def __init__(self,imie):
+        self.imie = imie
+        print(f"Utworzono nowego ucznia ({imie})!")
+    def powitanie(self):
+        print(f"Dzien dobry, nazywam sie {self.imie}")
+    imie = "bezimienny"
 
+u1 = Uczen("Marcin")
+u2 = Uczen("Karol")
+u1.powitanie()
+u2.powitanie()
 
 def wyswietl_ucznia( uczen ):
     srednia = policz_srednia( uczen )
@@ -30,6 +41,6 @@ def policz_srednia( uczen ):
         oceny.append( int(o) )
     return sum(oceny)/len(oceny)
 
-for u in uczniowie:
-    wyswietl_ucznia( u )
+#for u in uczniowie:
+#    wyswietl_ucznia( u )
 
