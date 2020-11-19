@@ -13,8 +13,15 @@ uczniowie = [
   { "imie" : "Marek", "nazwisko" : "V.", "oceny" : "4 5 3 3 2 4 4 5 3 6 2 3" }
 ]
 
+
+
 def wyswietl_ucznia( uczen ):
-    print(f"{uczen['imie']} {uczen['nazwisko']} oceny: {uczen['oceny']}")
+    srednia = policz_srednia( uczen )
+    if srednia > 4.7:
+        pasek = "czerwony pasek"
+    else:
+        pasek = ""
+    print(f"{uczen['imie']} {uczen['nazwisko']} srednia: {srednia} {pasek}")
 
 def policz_srednia( uczen ):
     oceny_t = uczen['oceny'].split()
@@ -23,13 +30,6 @@ def policz_srednia( uczen ):
         oceny.append( int(o) )
     return sum(oceny)/len(oceny)
 
-# przerobic funkcje wyswietl ucznia, tak aby ponizszy kod dzial tak samo jak poprzedni:
-
 for u in uczniowie:
     wyswietl_ucznia( u )
 
-#for u in uczniowie:
-#    srednia = policz_srednia( u )
-#    print(f"{u['imie']} {u['nazwisko']} srednia: {srednia}")
-#    if srednia > 4.7:
-#        print("czerwony pasek")
