@@ -1,3 +1,6 @@
+# Tabela ASCII: https://en.wikipedia.org/wiki/ASCII
+
+
 napis = "ALA MA KOTA, A KOT NAZYWA SIE PUSZEK"
 wynik = ""
 
