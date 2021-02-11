@@ -1,4 +1,5 @@
 napis = "ALA MA KOTA, A KOT NAZYWA SIE PUSZEK"
+wynik = ""
 
 for x in napis:
     if x.isalpha():
@@ -10,6 +11,8 @@ for x in napis:
         kodliterysz = numerliterysz + 65
         literasz = chr(kodliterysz)
         #print(x, kodlitery, numerlitery, numerliterysz, kodliterysz, literasz)
-        print(literasz)
+        wynik = wynik + literasz
     else:
-        print(x)
+        wynik = wynik + x
+
+print(wynik)
