@@ -27,10 +27,11 @@ def szyfr_cezara(klucz, napis):
             wynik = wynik + x
     return wynik
 
-k = int(input("Podaj klucz: "))
-n = input("Podaj wiadomość:")
-z = szyfr_cezara(k, n)
-print(f"Po zaszyfrowaniu: {z}")
+wiadomosc = "Kraer nzrufdfjt, tzvbrnv bkf futqpkr."
+
+for k in range(1, 25):
+    x = szyfr_cezara(-k, wiadomosc)
+    print(k, x)
 
 
 # Szyfr Cezara w przeglądarce:
