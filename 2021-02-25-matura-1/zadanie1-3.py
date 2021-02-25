@@ -14,3 +14,15 @@ n=8
 k=3
 wynik = czy_k_podobne(n, A, B, k)
 print(wynik)
+
+def czy_podobne(n, A, B):
+    for k in range(n):
+        print(f"Sprawdzam k = {k}")
+        if czy_k_podobne(n, A, B, k):
+            return True
+    return False
+
+wynik = czy_podobne(n, A, B)
+print(wynik)
+
+
