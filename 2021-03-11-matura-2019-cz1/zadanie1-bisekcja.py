@@ -10,13 +10,29 @@ def losowe_liczby_jasia_i_malgosi(ile_m, ile_j):
     return wynik
 #A = [7, 5, 9, 13, 11, 17, 21, 23, 42, 44, 80, 90, 2]
 
-A = losowe_liczby_jasia_i_malgosi(1000000,7)
+A = losowe_liczby_jasia_i_malgosi(100000, 200000)
 
-#print(A)
-for liczba in A:
-    if liczba % 2 == 0:
-        w = liczba
+# uwaga! to jest notacja pythona, gdzie listy indeksujemy od 0 do n-1
+# w pseudokodzie należałoby napisać p=1 k=n -- zgodnie z treścią zadania
+poczatek = 0
+koniec = len(A) - 1
+
+# złożoność O(log n)
+
+#while True:
+print(A)
+#for _ in range(8):
+while True:
+    srodek = (poczatek + koniec) // 2
+    print(f"Element środkowy z [{poczatek}..{koniec}]:  {srodek} wynosi: {A[srodek]}")
+    if A[srodek] % 2 == 1:
+#        print("nieparzysty")
+        poczatek = srodek + 1
+    else:
+#        print("parzysty")
+        koniec = srodek
+    if poczatek == koniec:
+        w = A[srodek]
         break
 
-print(w)
-
+print(f"Pierwsza liczba parzysta to: {w}")

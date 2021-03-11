@@ -12,6 +12,8 @@ def losowe_liczby_jasia_i_malgosi(ile_m, ile_j):
 
 A = losowe_liczby_jasia_i_malgosi(1000000,7)
 
+# złożoność O(n)
+
 #print(A)
 for liczba in A:
     if liczba % 2 == 0:
