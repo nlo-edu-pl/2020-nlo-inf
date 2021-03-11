@@ -1,6 +1,5 @@
 # https://logia.oeiizk.waw.pl/#!/bankzadan
 
-
 from turtle import *
 
 def prostokat(a, b, kolor):
