@@ -124,3 +124,19 @@ Update pracownicy
 Set pensja = pensja * 1.2
 Where staz > 10
 ```
+## Tworzenie tabel
+```
+CREATE TABLE "samochody" (
+	"nr_s"	INTEGER,
+	"tablica rejestracyjna"	TEXT UNIQUE,
+	"marka"	TEXT,
+	"model"	TEXT,
+	"rocznik"	INTEGER,
+	"kolor"	TEXT
+)
+```
+
+### Kasowanie
+```
+drop table samochody;
+```
