@@ -116,6 +116,72 @@ group by klasa
 |B         | 3            |
 |C         | 5            |
 
+Aby przefiltrować wiersze wynikowe:
+
+```
+select
+	imie,
+	count(*)
+from uczniowie
+group by imie
+having count(*) > 2
+```
+
+|imie      |count(*)      |
+|----------|--------------|
+|Marcin    | 3            |
+
+
+Wyliczanie statystyk wieku wg klas:
+```
+select
+	klasa,
+	 min(wiek), max(wiek), avg(wiek)
+from uczniowie
+group by klasa
+```
+|klasa|min(wiek)|max(wiek)|avg(wiek)|
+|-----|---------|---------|---------|
+| A   |15       |17       |15.4444  |
+| B   |14       |17       |15.6     |
+| C   |14       |16       |15.2727  |
+
+
+**Uwaga, błędne zapytanie**
+
+```
+select
+	klasa,
+	imie,
+	min(wiek), max(wiek), avg(wiek)
+from uczniowie
+group by klasa
+```
+|klasa|imie     |min(wiek)|max(wiek)|avg(wiek)|
+|-----|---------|---------|---------|---------|
+| A   |Stanisław|15       |17       |15.4444  |
+| B   |Filip    |14       |17       |15.6     |
+| C   |Kacper   |14       |16       |15.2727  |
+
+**Imiona w powyższym zbiorze wynikowym nie mają żadnego sensu.**
+
+Inne bazy danych (np. Postgresql) mogą w ogóle uznać takie zapytanie za błędne.
+
+Pobranie wszystkich imion jako jeden napis:
+
+```
+select
+	klasa,
+	group_concat(imie, ', ') as imiona,
+	min(wiek), max(wiek), avg(wiek)
+from uczniowie
+group by klasa
+```
+Uwaga:
+- nie mamy wpływu na kolejność imion
+- funkcja `group_concat()` jest specyficzna dla niektórych dialektów SQL, w Postgresie będzie to `string_agg()`
+
+
 
 ### Modyfikowanie danych
 
