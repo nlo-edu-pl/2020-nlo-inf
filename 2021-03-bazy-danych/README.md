@@ -85,6 +85,38 @@ Sprawdzenie ile wierszy spełnia dany warunek (np. *imie* to `Marcin`):
 Select count(*) from uczniowie where imie = 'Marcin';
 ```
 
+#### Grupowanie wierszy
+
+Liczenie uczniów wg klas:
+```
+select klasa, count(*) as "liczba uczniów"
+from uczniowie
+group by klasa
+```
+
+|klasa     |liczba uczniów|
+|----------|--------------|
+|A         | 9            |
+|B         | 10           |
+|C         | 11           |
+
+Liczenie uczniów spełniających jakiś warunek, wg klas:
+
+```
+select
+	klasa,
+	count(*) as "ile uczniów"
+from uczniowie
+where imie like 'M%'
+group by klasa
+```
+|klasa     |liczba uczniów|
+|----------|--------------|
+|A         | 4            |
+|B         | 3            |
+|C         | 5            |
+
+
 ### Modyfikowanie danych
 
 #### Dodawanie wierszy
