@@ -71,6 +71,20 @@ From pracownicy
 Where staz > 5
 ```
 
+#### Zliczanie wierszy
+
+Sprawdzenie ile jest wierszy w tabelce:
+
+```
+Select Count(*) From uczniowie;
+```
+
+Sprawdzenie ile wierszy spełnia dany warunek (np. *imie* to `Marcin`):
+
+```
+Select count(*) from uczniowie where imie = 'Marcin';
+```
+
 ### Modyfikowanie danych
 
 #### Dodawanie wierszy
