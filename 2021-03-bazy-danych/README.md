@@ -9,44 +9,44 @@
 ### Zapytania:
 
 Wyświetla wszystkich pracowników:
-```
+```sql
 SELECT * FROM pracownicy;
 ```
 
 
 Wyświetla wszystkich pracowników z pensją niższą niż 3300.
 
-```
+```sql
 SELECT * FROM pracownicy WHERE pensja < 3300;
 ```
 
 Wyszukiwanie po imieniu:
 
-```
+```sql
 SELECT * FROM pracownicy WHERE imie = 'Mariusz'
 ```
 
 Jeżeli kolumna ma nazwę ze spacją lub nazwę będącą słowem kluczowym, nazwą funkcji itp, zapisujemy ją w cudzysłowie:
 
-```
+```sql
 SELECT * FROM pracownicy WHERE "numer pracownika" > 1000
 ```
 
 Lub w kwadratowych nawiasach:
 
-```
+```sql
 SELECT * FROM pracownicy WHERE [numer pracownika] > 1000
 ```
 
 Uwaga! W innych dialektach SQL będzie używana inna składnia, np. w `MySQL` używa się odwrotnych apostrofów:
 
-```
+```sql
 SELECT * FROM pracownicy WHERE `numer pracownika` > 1000
 ```
 
 Wybieranie konkretnych kolumn (np. `imie` i `nazwisko`):
 
-```
+```sql
 Select imie, nazwisko
 From pracownicy
 Where staz > 5
@@ -54,7 +54,7 @@ Where staz > 5
 
 Wyliczanie wyrażeń: (np. dwunastokrotność pensji)
 
-```
+```sql
 Select imie, nazwisko, pensja * 12
 From pracownicy
 Where staz > 5
@@ -62,7 +62,7 @@ Where staz > 5
 
 Nadawanie nazw wyliczonym kolumnom:
 
-```
+```sql
 Select
     imie,
     nazwisko,
@@ -75,13 +75,13 @@ Where staz > 5
 
 Sprawdzenie ile jest wierszy w tabelce:
 
-```
+```sql
 Select Count(*) From uczniowie;
 ```
 
 Sprawdzenie ile wierszy spełnia dany warunek (np. *imie* to `Marcin`):
 
-```
+```sql
 Select count(*) from uczniowie where imie = 'Marcin';
 ```
 
@@ -102,7 +102,7 @@ group by klasa
 
 Liczenie uczniów spełniających jakiś warunek, wg klas:
 
-```
+```sql
 select
 	klasa,
 	count(*) as "ile uczniów"
@@ -118,7 +118,7 @@ group by klasa
 
 Aby przefiltrować wiersze wynikowe:
 
-```
+```sql
 select
 	imie,
 	count(*)
@@ -133,7 +133,7 @@ having count(*) > 2
 
 
 Wyliczanie statystyk wieku wg klas:
-```
+```sql
 select
 	klasa,
 	 min(wiek), max(wiek), avg(wiek)
@@ -149,7 +149,7 @@ group by klasa
 
 **Uwaga, błędne zapytanie**
 
-```
+```sql
 select
 	klasa,
 	imie,
@@ -169,7 +169,7 @@ Inne bazy danych (np. Postgresql) mogą w ogóle uznać takie zapytanie za błę
 
 Pobranie wszystkich imion jako jeden napis:
 
-```
+```sql
 select
 	klasa,
 	group_concat(imie, ', ') as imiona,
@@ -181,13 +181,26 @@ Uwaga:
 - nie mamy wpływu na kolejność imion
 - funkcja `group_concat()` jest specyficzna dla niektórych dialektów SQL, w Postgresie będzie to `string_agg()`
 
+#### Łączenie tabel
 
+Najprostszy *iloczyn kartezjański*
+```sql
+select nazwa, imie, nazwisko
+from nauczyciele Join klasy
+```
+
+Iloczyn kartezjański + filtrowanie wierszy:
+```sql
+select nazwa, imie, nazwisko
+from nauczyciele Join klasy
+Where nauczyciele.id = klasy.wychowawca;
+```
 
 ### Modyfikowanie danych
 
 #### Dodawanie wierszy
 
-```
+```sql
 Insert Into pracownicy Values(7777, 'Jan', 'Kowalski', 1.0, 2500 )
 ```
 
@@ -195,7 +208,7 @@ Lista wartości w `Values()` musi się zgadzać z kolumnami danej tabelki!
 
 #### Kasowanie wierszy
 
-```
+```sql
 Delete From pracownicy Where imie = 'Mariusz'
 ```
 
@@ -206,7 +219,7 @@ Delete From pracownicy
 
 #### Aktualizacja wierszy
 
-```
+```sql
 Update pracownicy
 Set pensja = 10000
 Where nazwisko = 'Nowak'
@@ -214,14 +227,14 @@ Where nazwisko = 'Nowak'
 (Ustawi pensję 10000 wszystkim pracownikom o nazwisku Nowak)
 
 Uwaga, podobnie jak `Delete`, brak `Where` powoduje, że polecenie działa dla **wszystkich** wierszy:
-```
+```sql
 Update pracownicy
 Set pensja = 1000
 ```
 
 Update może zmienić więcej niż jedną kolumnę:
 
-```
+```sql
 Update pracownicy
 Set
 	imie = 'Kazik',
@@ -231,13 +244,13 @@ Where "numer pracownika" = 7499
 
 Update może wyliczyć wartość względem wartości bieżącej:
 
-```
+```sql
 Update pracownicy
 Set pensja = pensja * 1.2
 Where staz > 10
 ```
 ## Tworzenie tabel
-```
+```sql
 CREATE TABLE "samochody" (
 	"nr_s"	INTEGER,
 	"tablica rejestracyjna"	TEXT UNIQUE,
@@ -249,6 +262,6 @@ CREATE TABLE "samochody" (
 ```
 
 ### Kasowanie
-```
+```sql
 drop table samochody;
 ```
