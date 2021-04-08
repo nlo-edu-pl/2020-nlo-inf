@@ -196,6 +196,29 @@ from nauczyciele Join klasy
 Where nauczyciele.id = klasy.wychowawca;
 ```
 
+`Left Join` - dopasowanie do **wszystkich** wierszy z lewej tabelki. (tutaj: `klasy`)
+Jeżeli do danego wiersza nie pasuje żaden inny - wyświetla się `NULL`
+```sql
+select nazwa, imie, nazwisko
+from klasy Left Join nauczyciele
+On ( nauczyciele.id = klasy.wychowawca );
+```
+
+Inne bazy danych mają też `Right Join`, który działa dosłownie symetrycznie do `Left`. W przypadku `SQLite` funkcjonalność `Right Join` uzyskujemy poprzez zamianę miejscami tabelek.
+
+Join trzech tabelek:
+```sql
+Select
+	uczniowie.imie || ' ' || uczniowie.nazwisko As "imie i nazwisko",
+	nazwa As klasa,
+	nauczyciele.imie || ' ' || nauczyciele.nazwisko As "wychowawca"
+From uczniowie
+Join klasy On uczniowie.id_klasy = klasy.id
+Join nauczyciele On klasy.id_wychowawcy = nauczyciele.id
+```
+(Przy okazji łączenie tekstów - Uwaga - w różnych silnikach bazd danych będzie to inna składnia.) https://www.oreilly.com/library/view/sql-in-a/9780596155322/re92.html
+
+
 ### Modyfikowanie danych
 
 #### Dodawanie wierszy
