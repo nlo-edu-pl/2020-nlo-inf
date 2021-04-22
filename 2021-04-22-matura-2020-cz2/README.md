@@ -1,6 +1,6 @@
 # Zadania
 
-## Zadanie 4
+## Zadanie 4.1
 
 Mocna hipoteza Goldbacha mówi, że każda parzysta liczba całkowita większa od 4 jest sumą dwóch nieparzystych liczb pierwszych.
 
@@ -56,3 +56,23 @@ for p in range(3, badana_liczba // 2):
         continue
     print(f"{p} {q}")
 ```
+
+## Zadanie 4.2
+
+Mamy jakiś napis: `aaaaavbbbxbbcdddddxxxyyyyzzzz`
+
+Napis składa się ze spójnych fragmentów złożonego z identycznych liter:
+
+| fragment  | długość |
+|-----------|---------|
+| `aaaaa`   | **5**   |
+| `v`       | 1       |
+| `bbb`     | 3       |
+| `x`       | 1       |
+| `bb`      | 2       |
+| `c`       | 1       |
+| `ddddd`   | 5       |
+| `xxx`     | 3       |
+| `yyyy`    | 4       |
+| `zzzz`    | 4       |
+
