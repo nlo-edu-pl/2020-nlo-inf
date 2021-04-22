@@ -76,3 +76,9 @@ Napis składa się ze spójnych fragmentów złożonego z identycznych liter:
 | `yyyy`    | 4       |
 | `zzzz`    | 4       |
 
+## Zadanie 4.3
+
+Mamy pary liczba-słowo:
+- `(1, bbbb)`
+- `(2, aaa)`
+- `(3, aaa)`
