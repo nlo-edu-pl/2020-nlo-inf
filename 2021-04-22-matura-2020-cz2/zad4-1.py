@@ -8,12 +8,20 @@ def czy_pierwsza(n):
             break
     return True
 
-badana_liczba = 2400
+def znajdz_pare_liczb(n):    
+    for p in range(3, n // 2 + 1):
+        if not czy_pierwsza(p):
+            continue
+        q = n - p
+        if not czy_pierwsza(q):
+            continue
+        return p, q
 
-for p in range(3, badana_liczba // 2):
-    if not czy_pierwsza(p):
-        continue
-    q = badana_liczba - p
-    if not czy_pierwsza(q):
-        continue
-    print(f"{p} {q}")
+with open('pary.txt', 'r') as fin, open('wyniki4-1.txt', 'w') as fout:
+    for linia in fin:
+        liczba, napis = linia.split(' ')
+        liczba = int(liczba) # konwersja stringa na liczbę
+        if liczba % 2 == 1:
+            continue
+        p, q = znajdz_pare_liczb(liczba)
+        fout.write(f"{liczba} {p} {q}\n")
