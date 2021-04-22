@@ -45,14 +45,14 @@ Pary liczb spełniających tę własność to:
 
 Największa różnica to pierwsza para: `5, 19`
 
+### Algorytm wyszukiwania par liczb pierwszych sumujących się do wskazanej liczby
 
-
-
-
-
-
-
-
-
-for p in pierwsze:
-    druga_liczba = badana_liczba - p
+```python
+for p in range(3, badana_liczba // 2):
+    if not czy_pierwsza(p):
+        continue
+    q = badana_liczba - p
+    if not czy_pierwsza(q):
+        continue
+    print(f"{p} {q}")
+```
