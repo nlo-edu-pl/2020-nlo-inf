@@ -18,6 +18,11 @@ def czy_pierwsza(n):
     return True
 
 def znajdz_pare_liczb(n):
+    """
+    Funkcja znajduje parę liczb pierwszych sumujących się do danej liczby,
+    takich, że różnica między nimi jest możliwie duża.
+    """
+
     for p in range(3, n // 2 + 1):
         if not czy_pierwsza(p):
             continue
