@@ -18,5 +18,6 @@ def znajdz_najdluzszy_podciag(napis):
 with open('pary.txt', 'r') as fin, open('wyniki4-2.txt', 'w') as fout:
     for linia in fin:
         liczba, slowo = linia.split(' ')
+        #slowo = slowo.strip()
         dlug, litera = znajdz_najdluzszy_podciag(slowo)
         fout.write(f"{litera} {dlug}\n")
