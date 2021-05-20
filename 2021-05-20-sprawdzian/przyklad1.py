@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# Autor: Mateusz Adamowski
+# Email: mateusz.adamowski@nlo.edu.pl
+
 import sqlite3
 import urllib.request
 import os
