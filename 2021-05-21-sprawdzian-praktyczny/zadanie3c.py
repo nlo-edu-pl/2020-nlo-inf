@@ -26,7 +26,7 @@ sql = """
     Order By rok_ur
     Limit 1
 """
-print(sql)
+print(sql) 
 for wiersz in db.execute(sql):
     (x,) = wiersz
     print(f"{x}")
