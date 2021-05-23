@@ -9,13 +9,13 @@ BAZA = "kandydaci.db"
 
 db = sqlite3.connect(BAZA)
 
-print("Jak ma na imię jedyny kandydat o nazwisku 'PIPAŁA'?")
+print("Ilu jest kandydatów o nazwisku 'WÓJCIK'?")
 sql = """
-    Select imie
+    Select count(*)
     From kandydat
-    Where nazwisko = 'PIPAŁA'
+    Where nazwisko = 'WÓJCIK'
 """
 print(sql)
 for wiersz in db.execute(sql):
-    (imie,) = wiersz
-    print(f"{imie}")
+    (x,) = wiersz
+    print(f"{x}")

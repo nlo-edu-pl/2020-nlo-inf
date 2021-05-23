@@ -13,7 +13,7 @@ print("Ile lat ma w tym roku jedyny kandydat o imieniu 'JOE'?")
 sql = """
     Select 2021 - rok_ur
     From kandydat
-    Where imie Like 'JOE'
+    Where imie = 'JOE'
 """
 print(sql)
 for wiersz in db.execute(sql):
