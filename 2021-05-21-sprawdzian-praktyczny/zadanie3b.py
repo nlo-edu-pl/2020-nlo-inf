@@ -17,5 +17,5 @@ sql = """
 """
 print(sql)
 for wiersz in db.execute(sql):
-    (imie,) = wiersz
-    print(f"{imie}")
+    (wiek,) = wiersz
+    print(f"{wiek}")
